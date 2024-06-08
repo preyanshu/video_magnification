@@ -7,7 +7,7 @@
 ![Frontend](Static/frontend.jpg)
 
 # Analysis Report:
-![Analysis Report](Static/frontend.jpg)
+![Analysis Report](Static/live.jpg)
 
 # Motion Amplification Vibration Monitoring System
 
