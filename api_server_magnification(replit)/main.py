@@ -3,7 +3,7 @@ from flask_cors import CORS
 import requests
 
 app = Flask(__name__)
-CORS(app)  # This will enable CORS for all routes
+CORS(app) 
 
 @app.route('/magnify', methods=['POST'])
 def magnify():
