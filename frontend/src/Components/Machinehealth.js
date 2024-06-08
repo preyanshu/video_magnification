@@ -118,7 +118,7 @@ const MachineHealth = () => {
     alignItems: "center",
     flexDirection: "column",
     padding: "20px",
-    minHeight: loading || report ? "100vh" : "130vh",
+    minHeight: "130vh",
     justifyContent: loading || report ? "center" : "",
     paddingBottom: "30px",
     height: "160vh",
@@ -126,7 +126,7 @@ const MachineHealth = () => {
   };
 
   const dynamicStyles2 = {
-    height: loading || report ? "100vh" : "130vh",
+    height: "160vh",
     width: collapse ? "4vw" : "16vw",
     transition: "0.3s",
     backgroundColor: "black",
@@ -216,7 +216,7 @@ const MachineHealth = () => {
               </div>
               <div className="mb-5 shadow" style={{backgroundColor:"black",height:"30vh",width:"50vw",border:"1px solid white",display:"flex",justifyContent:"center",flexDirection:"column",alignItems:"center",borderRadius:"5px"}}>
                 <div className="d-flex justify-content-center align-items-center">
-                  <h5 style={{fontSize:"1.45rem"}}>Select a Technique</h5>
+                  <h5 style={{fontSize:"1.45rem",color:"white"}}>Select a Technique</h5>
                 </div>
                 <div className="mt-3 w-25" style={{backgroundColor:"white",borderRadius:"5px",border:"1px solid black"}}>
                   <select className="form-select form-select-lg" value={selectedOption} onChange={handleSelectChange}>
