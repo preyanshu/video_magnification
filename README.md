@@ -1,11 +1,13 @@
-# Electrothon_6.0-LEND-EN
-# Lend-En: Bridging Help, Building Together.
+
 
 # System Architecture:
 ![System Architecture](Static/s_design.png)
 
 # Frontend:
-![System Architecture](Static/)
+![Frontend](Static/frontend.jpg)
+
+# Analysis Report:
+![Analysis Report](Static/frontend.jpg)
 
 # Motion Amplification Vibration Monitoring System
 
@@ -36,7 +38,7 @@ The Motion Amplification Vibration Monitoring System is an innovative project ai
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/ARTHON9611/Electrothon_6.0-LEND-EN-.git
+   git clone https://github.com/preyanshu/video_magnification.git
    ```
 
 2. Install dependencies:
