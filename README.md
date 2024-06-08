@@ -4,6 +4,9 @@
 # System Architecture:
 ![System Architecture](Static/s_design.png)
 
+# Frontend:
+![System Architecture](Static/)
+
 # Motion Amplification Vibration Monitoring System
 
 The Motion Amplification Vibration Monitoring System is an innovative project aimed at merging human and machine health monitoring using cutting-edge technology. By harnessing Video Magnification, Computer Vision, and Machine Learning Algorithms, our system provides comprehensive insights into machinery and human well-being.
