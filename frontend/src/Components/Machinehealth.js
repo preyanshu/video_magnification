@@ -27,14 +27,14 @@ const MachineHealth = () => {
   const fetchData = async (url, technique, mode) => {
     try {
       console.log(url, technique, mode);
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/magnify`, {
+      const response = await fetch(`http://127.0.0.1:5001/upload`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
+          'Content-Type': 'application/JSON'
         },
-        body: new URLSearchParams({
+        body: JSON.stringify({
           url: url,
-          technique: technique,
+          techniuqe: technique,
           mode: mode
         })
       });
@@ -47,7 +47,7 @@ const MachineHealth = () => {
       console.log(data);
       setMsrc(data.video_url);
     } catch (error) {
-      alert('Error fetching data');
+      alert(error);
     }
   };
 
@@ -86,7 +86,8 @@ const MachineHealth = () => {
   }, []);
 
   useEffect(() => {
-    const socket = io(`${process.env.REACT_APP_SOCKET_URL}`, {
+    const socket = io(`http://127.0.0.1:5001`,
+ {
       extraHeaders: {
         'ngrok-skip-browser-warning': '69420'
       }
@@ -233,6 +234,62 @@ const MachineHealth = () => {
               <h1>Loading ...</h1>
             </div>
           }
+           {
+  !report && !loading && !msrc && updone && (
+    <>
+      <div style={{ height: "50px" }} />
+
+      <div className="my-3 shadow" style={{
+        backgroundColor: "black",
+        minHeight: "50vh",
+        width: "50vw",
+        border: "1px solid white",
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center",
+        height: "fit-content",
+        borderRadius: "5px"
+      }}>
+        <div className="py-5" style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column"
+        }}>
+          <lottie-player
+            src="https://lottie.host/3d201c65-6393-4f6e-b415-af3d390394b3/7QoAiOIaJ4.json"
+            background="transparent"  // corrected from ##ffffff to "transparent"
+            speed="1"
+            style={{
+              width: "300px",
+              height: "300px",
+              border: "0px solid black",
+              marginTop: "-100px"
+            }}
+            loop
+            autoplay
+            direction="1"
+            mode="normal">
+            loading
+          </lottie-player>
+          <span className="text-center" style={{
+            width: "90%",
+            border: "0px solid black",
+            fontSize: "20px",
+            marginTop: "-60px",
+            color: "white"
+          }}>
+            <b>Processing Your Video...</b>
+          </span>
+        </div>
+      </div>
+
+      <LogViewer logs={logs} />
+    </>
+  )
+}
+
           {msrc && src && 
             <>
               <div className="machinetitle shadow" style={{backgroundColor:"black",height:"35vh",width:"50vw",border:"1px solid white",display:"flex",justifyContent:"center",flexDirection:"column",alignItems:"center",color:"white",borderRadius:"5px"}}>

@@ -49,7 +49,7 @@ def save_video_combined(result=None, output_path=None, video_tensor=None, fps=No
         print(output_path)
         output_directory = os.path.dirname(output_path)
         if output_directory == "":
-            output_directory = "." y
+            output_directory = "." 
         print(output_directory)
         output_file_path = os.path.join(output_directory, name + "_Eulerian_Magnification.mp4")
         print(output_file_path)
@@ -69,16 +69,18 @@ def save_video_combined(result=None, output_path=None, video_tensor=None, fps=No
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
-    file = request.files.get('file')
-    url = request.form.get('url')
-    technique = request.form.get('technique')
+    if request.is_json:
+        data = request.get_json()  # Retrieve JSON data
+        url = data.get('url') 
+        file = request.files.get('file')  
+        technique = data.get('techniuqe')
     params = request.form.to_dict()  # Retrieve all form parameters
     processed_file_path=None
     
     if not file and not url:
         socketio.emit(event='messages', data={'logs': 'Output path is required for Phase technique','type':'error'})
         print("No file or URL provided")
-        return None
+        return jsonify({'error': "No file"})
 
     if file:
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
