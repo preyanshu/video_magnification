@@ -69,16 +69,7 @@ const Uploadwidget = () => {
     }, 1000);
   };
 
-  const [answers, setAnswers] = useState({
-    q1: '',
-    q2: '',
-    q3: '',
-    q4: '',
-    q5: '',
-});
-const handleOptionChange = (questionNumber, selectedOption) => {
-  setAnswers({ ...answers, [questionNumber]: selectedOption });
-  
+ 
 };
 
 const handleSubmit = () => {
