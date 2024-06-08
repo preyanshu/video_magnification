@@ -33,6 +33,27 @@ The Motion Amplification Vibration Monitoring System is an innovative project ai
 - Universal Device Compatibility: Ensure flawless performance across a spectrum of devices, including web, windows and Android platforms.
 - Real Time Motion Magnification using Frame-By-Frame Difference of Vibrations.
 
+  # Overview
+Harnessing Video Magnification, Computer Vision, and Machine Learning Algorithms, the system provides comprehensive insights into machinery and human health.
+
+## Working Architecture
+(Refer to the diagram in the project repo for a visual representation.)
+
+### Backend:
+1. **API Server for Magnification (Node.js):** Hosted on Replit for hackathon purposes, this server acts as an API server forwarding calls to the magnification server.
+
+2. **Server Report Generator (Node.js):** Another API server hosted on Replit, responsible for making calls to the AI model with generated report images and objects extracted from frames. It calculates the average of responses from multiple calls and returns the result.
+
+3. **Magnification Server (Flask):** A Python server that performs actual video magnification using Eulerian/phase magnification scripts. It processes the video and returns the magnified video link.
+
+4. **Graph Generation Server (Python):** This component generates graphs from the magnified video. It sends images of the graphs and detected objects in the frame to the "Server Report Generator (Node.js)" via an API call.
+
+5. **Live Magnification:** Developed as a proof of concept, this feature skips the process of applying filters and magnifies the video in real time. However, note that the magnification quality might not be optimal, and the video is grayscale.
+
+### Frontend:
+The React frontend allows users to select magnification parameters and upload videos to Cloudinary. The uploaded video link is then sent to the magnification server for further processing. Before uploading, the video undergoes cropping and preprocessing to reduce resolution and frame rate, thus reducing the load on the magnification server. Additionally, it utilizes web sockets for real-time logs for video magnification.
+
+
 ## Usage
 
 1. Clone the repository:
