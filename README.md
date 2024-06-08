@@ -10,7 +10,10 @@
 
 
 # Analysis Report:
-![Analysis Report](Static/live.jpg)
+![Analysis Report](Static/main.jpg)
+
+# Live Magnification
+![Live](Static/live.jpg)
 
 # Motion Amplification Vibration Monitoring System
 
