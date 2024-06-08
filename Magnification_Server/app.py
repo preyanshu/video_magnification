@@ -9,8 +9,8 @@ import numpy as np
 import cv2
 
 
-from Eulerian_Magnification import process_video_Eulerian # Replace with your Eulerian code file
-from Phase_Based_Magnification import process_video_Phase  # Replace with your phase-based code file
+from Eulerian_Magnification import process_video_Eulerian 
+from Phase_Based_Magnification import process_video_Phase 
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
@@ -49,7 +49,7 @@ def save_video_combined(result=None, output_path=None, video_tensor=None, fps=No
         print(output_path)
         output_directory = os.path.dirname(output_path)
         if output_directory == "":
-            output_directory = "."  # If no directory provided, us   e the current directory
+            output_directory = "." y
         print(output_directory)
         output_file_path = os.path.join(output_directory, name + "_Eulerian_Magnification.mp4")
         print(output_file_path)
